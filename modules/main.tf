@@ -23,18 +23,15 @@ locals {
     "cloudfunctions.googleapis.com",
     "compute.googleapis.com",
     "apigateway.googleapis.com",
-
     # Databases and Analytics
     "bigquery-json.googleapis.com",
     "bigquerystorage.googleapis.com",
     "sql-component.googleapis.com",
     "sqladmin.googleapis.com",
     "pubsub.googleapis.com",
-
     # Storage
     "storage-api.googleapis.com",
     "storage-component.googleapis.com",
-
     # CI/CD
     "deploymentmanager.googleapis.com",
     "container.googleapis.com",
@@ -42,7 +39,6 @@ locals {
     "artifactregistry.googleapis.com",
     "cloudbuild.googleapis.com",
     "sourcerepo.googleapis.com",
-
     # Operations and Others
     "iam.googleapis.com",
     "iamcredentials.googleapis.com",
