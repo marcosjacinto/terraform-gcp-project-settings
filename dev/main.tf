@@ -6,7 +6,6 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket = "${GCP_PROJECT_ID}-terraform"
     prefix = "terraform/state"
   }
 }
