@@ -123,7 +123,7 @@ data "google_iam_policy" "app_engine_admin" {
   }
 }
 
-resource "google_project_iam_policy" "project_default_compute_acc" {
+resource "google_project_iam_policy" "project_default_app_engine_acc" {
   project     = var.project_id
   policy_data = data.google_iam_policy.app_engine_admin.policy_data
   depends_on = [
