@@ -5,6 +5,10 @@ terraform {
       version = "4.39.0"
     }
   }
+  backend "gcs" {
+    bucket = "${var.project_id}-terraform"
+    prefix = "terraform/state"
+  }
 }
 
 provider "google-beta" {
@@ -14,7 +18,7 @@ provider "google-beta" {
 }
 
 module "gcp_settings" {
-  source = "../modules"
+  source = "../modules/project_setup"
   project_id = var.project_id
   region = var.region
   zone = var.zone
