@@ -24,8 +24,7 @@ locals {
     "compute.googleapis.com",
     "apigateway.googleapis.com",
     # Databases and Analytics
-    "bigquery-json.googleapis.com",
-    "bigquerystorage.googleapis.com",
+    "bigquery.googleapis.com",
     "sql-component.googleapis.com",
     "sqladmin.googleapis.com",
     "pubsub.googleapis.com",
@@ -54,9 +53,9 @@ locals {
 }
 
 resource "google_project_service" "project_services" {
-  project = var.project_id
-  count   = length(local.api_list)
-  service = element(local.api_list, count.index)
+  for_each = toset(local.api_list)
+  project            = var.project_id
+  service            = each.key
   disable_on_destroy = true
 }
 
@@ -85,10 +84,16 @@ resource "google_artifact_registry_repository" "docker_repo" {
 
 data "google_app_engine_default_service_account" "default" {
   project = var.project_id
+  depends_on = [
+    time_sleep.wait_30_seconds
+  ]
 }
 
 data "google_compute_default_service_account" "default" {
   project = var.project_id
+  depends_on = [
+    time_sleep.wait_30_seconds
+  ]
 }
 
 data "google_iam_policy" "compute_admin" {
