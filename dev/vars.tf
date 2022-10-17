@@ -1,6 +1,7 @@
 variable "project_id" {
   description = "Project name"
   type        = string
+  default = "$GCP_PROJECT_ID"
 }
 
 variable "region" {
