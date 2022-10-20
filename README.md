@@ -32,4 +32,4 @@ terraform plan -out "terraform.plan"
 terraform apply "terraform.plan"
 ```
 
-When asked, inform your billing account ID.
+When asked, inform your billing account ID and project id.

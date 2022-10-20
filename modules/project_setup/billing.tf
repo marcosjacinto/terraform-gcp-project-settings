@@ -1,9 +1,9 @@
 data "google_billing_account" "account" {
-    id = var.billing_account_id
+    billing_account = var.billing_account_id
 }
 
 resource "google_billing_budget" "standard_budget" {
-    billing_account = data.google_billing_account.account
+    billing_account = data.google_billing_account.account.id
     display_name = "Standard Billing Budget"
     amount {
       specified_amount {
