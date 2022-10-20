@@ -21,4 +21,8 @@ module "gcp_settings" {
   project_id = var.project_id
   region = var.region
   zone = var.zone
+  repository = var.repository
+  billing_budget_amount = var.billing_budget_amount
+  billing_budget_currency = var.billing_budget_currency
+  billing_account_name = var.billing_account_name
 }
