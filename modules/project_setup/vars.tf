@@ -32,3 +32,8 @@ variable "billing_budget_currency" {
   type = string
   default = "BRL"
 }
+
+variable "billing_account_name" {
+  description = "Billing account display name"
+  type = string
+}

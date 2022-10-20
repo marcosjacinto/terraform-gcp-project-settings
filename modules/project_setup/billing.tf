@@ -1,4 +1,5 @@
 data "google_billing_account" "account" {
+    display_name = var.billing_account_name
 }
 
 resource "google_billing_budget" "standard_budget" {
