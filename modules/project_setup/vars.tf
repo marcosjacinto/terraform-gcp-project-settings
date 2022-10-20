@@ -20,3 +20,15 @@ variable "repository" {
   type        = string
   default     = "docker-repository"
 }
+
+variable "billing_budget_amount" {
+  description = "Project's maximum budget"
+  type = string
+  default = "500"
+}
+
+variable "billing_budget_currency" {
+  description = "Project's maximum currency"
+  type = string
+  default = "BRL"
+}
