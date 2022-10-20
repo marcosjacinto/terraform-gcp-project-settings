@@ -24,5 +24,5 @@ module "gcp_settings" {
   repository = var.repository
   billing_budget_amount = var.billing_budget_amount
   billing_budget_currency = var.billing_budget_currency
-  billing_account_name = var.billing_account_name
+  billing_account_id = var.billing_account_id
 }

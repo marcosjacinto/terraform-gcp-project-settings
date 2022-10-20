@@ -33,7 +33,7 @@ variable "billing_budget_currency" {
   default = "BRL"
 }
 
-variable "billing_account_name" {
-  description = "Billing account display name"
+variable "billing_account_id" {
+  description = "Billing account ID"
   type = string
 }
