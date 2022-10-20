@@ -23,6 +23,7 @@ locals {
     "cloudbuild.googleapis.com",
     "sourcerepo.googleapis.com",
     # Operations and Others
+    "billingbudgets.googleapis.com",
     "iam.googleapis.com",
     "iamcredentials.googleapis.com",
     "logging.googleapis.com",
