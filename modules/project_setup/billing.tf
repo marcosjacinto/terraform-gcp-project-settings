@@ -6,11 +6,12 @@ data "google_billing_account" "account" {
 }
 
 data "google_project" "project" {
+  project_id = var.project_id
 }
 
 resource "google_billing_budget" "standard_budget" {
   billing_account = data.google_billing_account.account.id
-  display_name    = "Standard Billing Budget"
+  display_name    = "Standard Billing Budget ${var.project_id}"
   budget_filter {
     projects = ["projects/${data.google_project.project.number}"]
   }
