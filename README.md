@@ -21,13 +21,23 @@ Before running the scripts, manually do the following:
 On your terminal run:
 
 ```
-export GCP_PROJECT_ID=your-project_id
-cd modules/backend
+export PROJECT_ID=your-project_id
+cd modules/backend_setup
 terraform init
 terraform plan -out "terraform.plan"
 terraform apply "terraform.plan"
+
+cd ../terraform_servic_acc
+terraform init
+terraform plan -out "terraform.plan"
+terraform apply "terraform.plan"
+```
+
+Then, authenticate as the new service account and run:
+
+```
 cd ../../dev
-terraform init -backend-config="bucket=${GCP_PROJECT_ID}-terraform"
+terraform init -backend-config="bucket=${PROJECT_ID}-terraform"
 terraform plan -out "terraform.plan"
 terraform apply "terraform.plan"
 ```
