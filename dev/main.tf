@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "gcs" {
-    prefix = "terraform/dev"
+    prefix = "terraform/dev/project_setup"
   }
 }
 
