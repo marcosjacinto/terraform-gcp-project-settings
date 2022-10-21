@@ -17,7 +17,7 @@ provider "google-beta" {
 resource "google_project_service" "storage_api" {
   project            = var.project_id
   service            = "storage-api.googleapis.com"
-  disable_on_destroy = true
+  disable_on_destroy = false
 }
 
 

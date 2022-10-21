@@ -23,6 +23,7 @@ locals {
     "cloudbuild.googleapis.com",
     "sourcerepo.googleapis.com",
     # Operations and Others
+    "cloudbilling.googleapis.com",
     "billingbudgets.googleapis.com",
     "iam.googleapis.com",
     "iamcredentials.googleapis.com",
@@ -41,7 +42,7 @@ resource "google_project_service" "project_services" {
   for_each = toset(local.api_list)
   project            = var.project_id
   service            = each.key
-  disable_on_destroy = true
+  disable_on_destroy = false
 }
 
 # This is used so there is some time for the activation of the API's to propagate through
